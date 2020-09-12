@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
+import { Home } from './components/Home/Home'
+
 export default function App() {
   return (
     <Router>
@@ -8,13 +10,23 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to='/'>Home courbe globale du cash</Link>
             </li>
+
             <li>
-              <Link to='/about'>About</Link>
+              <Link to='/about'>courbe comparative des comptes</Link>
             </li>
+
             <li>
-              <Link to='/users'>Users</Link>
+              <Link to='/users'>courbe d'un seul compte</Link>
+            </li>
+
+            <li>
+              <Link to='/users'>login</Link>
+            </li>
+
+            <li>
+              <Link to='/users'>Register</Link>
             </li>
           </ul>
         </nav>
@@ -35,10 +47,6 @@ export default function App() {
       </div>
     </Router>
   )
-}
-
-function Home() {
-  return <h2>Home</h2>
 }
 
 function About() {
