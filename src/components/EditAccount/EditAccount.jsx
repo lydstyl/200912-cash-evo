@@ -12,7 +12,7 @@ export const EditAccount = () => {
   useEffect(() => {
     const fetchAccount = async () => {
       try {
-        const account = await getAccount(accountId)
+        const account = await getAccount(accountId - 1)
 
         setAccount(account)
       } catch (error) {
@@ -25,9 +25,8 @@ export const EditAccount = () => {
 
   if (account) {
     const { id, name, description, link, logo, min, max, history } = account
-
-    console.log('EditAccount -> name', name)
   }
+  console.log('EditAccount -> name')
 
-  return <div>{account && <p>il y a un account</p>}</div>
+  return <div>{account && <p>il y a un account {account.name}</p>}</div>
 }
