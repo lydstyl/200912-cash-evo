@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 import { Home } from './components/Home/Home'
+import { EditAccount } from './components/EditAccount/EditAccount'
 
 export default function App() {
   return (
@@ -10,15 +11,7 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <Link to='/'>Home courbe globale du cash</Link>
-            </li>
-
-            <li>
-              <Link to='/about'>courbe comparative des comptes</Link>
-            </li>
-
-            <li>
-              <Link to='/users'>courbe d'un seul compte</Link>
+              <Link to='/'>Courbes globale et comparative</Link>
             </li>
 
             <li>
@@ -37,9 +30,15 @@ export default function App() {
           <Route path='/about'>
             <About />
           </Route>
+
           <Route path='/users'>
             <Users />
           </Route>
+
+          <Route path='/edit-account/:accountId'>
+            <EditAccount />
+          </Route>
+
           <Route path='/'>
             <Home />
           </Route>

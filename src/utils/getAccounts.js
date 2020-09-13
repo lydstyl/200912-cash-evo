@@ -44,3 +44,12 @@ export const getAccounts = async () => {
     console.log('getAccounts -> error', error)
   }
 }
+
+export const getAccount = async (id) => {
+  try {
+    const data = await accounts[id]
+    return data
+  } catch (error) {
+    console.log('getAccounts -> error', error)
+  }
+}

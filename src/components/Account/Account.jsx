@@ -10,7 +10,7 @@ const getLastAndJustBeforeAmount = (history) => {
 }
 
 export const Account = ({
-  account: { name, description, link, logo, min, max, history },
+  account: { id, name, description, link, logo, min, max, history },
 }) => {
   const amounts = getLastAndJustBeforeAmount(history)
   const { lastAmount, justBeforeAmount } = amounts
@@ -31,10 +31,10 @@ export const Account = ({
         </h5>
 
         <p className='card-text'>{description}</p>
-        <pre className='card-text'>{JSON.stringify(history, null, 4)}</pre>
+        {/* <pre className='card-text'>{JSON.stringify(history, null, 4)}</pre> */}
 
-        <a href='#' className='btn btn-primary'>
-          Edit
+        <a href={`/edit-account/${id}`} className='btn btn-primary'>
+          Détail / Éditer
         </a>
       </div>
     </div>
