@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { getAccounts } from '../../utils/getAccounts'
 
+import { Account } from '../Account/Account'
+
 export const Home = () => {
   const [accounts, setAccounts] = useState(null)
 
@@ -19,15 +21,13 @@ export const Home = () => {
     fetchAccounts()
   }, [])
 
-  console.log(accounts)
-
   return (
     <div>
       <h1>Home</h1>
       {accounts && (
         <div className='accounts'>
           {accounts.map((a) => (
-            <div key={a.id}>{a.name}</div>
+            <Account key={a.id} account={a} />
           ))}
         </div>
       )}
